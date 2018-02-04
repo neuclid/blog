@@ -1,0 +1,23 @@
+#Pythonfiles
+*.py[cod]
+
+#Directories
+output
+output/
+
+
+
+#Localstuff
+pelicanconf_local.py
+pelican-plugins/
+pelican-themes/
+themes/
+plugins/
+
+#Intermediate files
+.ipynb_checkpoints/
+__pycache__/
+cache/
+
+percolation/
+*.pid
