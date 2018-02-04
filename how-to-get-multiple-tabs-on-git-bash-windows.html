@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>How to get multiple tabs on git bash [Windows] - higher abstractions</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="http://localhost:8000//static/favicon.ico" rel="icon">
+
+<link rel="canonical" href="http://localhost:8000/how-to-get-multiple-tabs-on-git-bash-windows.html">
+
+        <meta name="author" content="neuclid" />
+        <meta name="keywords" content="gitbash,windows,workflow" />
+        <meta name="description" content="I’m on Windows (please no bully). So while cmd.exe is terrible to get comfortable with, I’ve gotten along alright with git bash. However, whenever I use the Linux terminal, I find myself using tmux and/or tabs in general. So naturally, I wanted to figure out similar …" />
+
+        <meta property="og:site_name" content="higher abstractions" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="How to get multiple tabs on git bash [Windows]"/>
+        <meta property="og:url" content="http://localhost:8000/how-to-get-multiple-tabs-on-git-bash-windows.html"/>
+        <meta property="og:description" content="I’m on Windows (please no bully). So while cmd.exe is terrible to get comfortable with, I’ve gotten along alright with git bash. However, whenever I use the Linux terminal, I find myself using tmux and/or tabs in general. So naturally, I wanted to figure out similar …"/>
+        <meta property="article:published_time" content="2018-01-19" />
+            <meta property="article:section" content="Programming" />
+            <meta property="article:tag" content="gitbash" />
+            <meta property="article:tag" content="windows" />
+            <meta property="article:tag" content="workflow" />
+            <meta property="article:author" content="neuclid" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://localhost:8000/theme/css/bootstrap.superhero.min.css" type="text/css"/>
+    <link href="http://localhost:8000/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://localhost:8000/theme/css/pygments/default.css" rel="stylesheet">
+    <link href="http://localhost:8000/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://localhost:8000/theme/css/style.css" type="text/css"/>
+
+        <link href="http://localhost:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="higher abstractions ATOM Feed"/>
+
+
+
+        <link href="http://localhost:8000/feeds/programming.atom.xml" type="application/atom+xml" rel="alternate"
+              title="higher abstractions Programming ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://localhost:8000/" class="navbar-brand">
+higher abstractions            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/pages/about.html">About</a></li>
+                    <li><a href="/pages/now.html">Now</a></li>
+                    <li><a href="/archives.html">Archives</a></li>
+                    <li><a href="/categories.html">Categories</a></li>
+                    <li><a href="/tags.html">Tags</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <ol class="breadcrumb">
+                <li><a href="http://localhost:8000" title="higher abstractions"><i class="fa fa-home fa-lg"></i></a></li>
+                <li><a href="http://localhost:8000/category/programming.html" title="Programming">Programming</a></li>
+                <li class="active">How to get multiple tabs on git bash [Windows]</li>
+            </ol>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://localhost:8000/how-to-get-multiple-tabs-on-git-bash-windows.html"
+                       rel="bookmark"
+                       title="Permalink to How to get multiple tabs on git bash [Windows]">
+                        How to get multiple tabs on git bash [Windows]
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2018-01-19T00:00:00+05:30"> Fri 19 January 2018</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://localhost:8000/tag/gitbash.html">gitbash</a>
+        /
+	<a href="http://localhost:8000/tag/windows.html">windows</a>
+        /
+	<a href="http://localhost:8000/tag/workflow.html">workflow</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>I&rsquo;m on Windows (please no bully). So while <code>cmd.exe</code> is terrible to get comfortable with, I&rsquo;ve gotten along alright with git bash. However, whenever I use the Linux terminal, I find myself using <strong>tmux</strong> and/or tabs in general. So naturally, I wanted to figure out similar functionality on Windows.</p>
+<p>Let&rsquo;s get to it.</p>
+<ol>
+<li>Get <a href="https://sourceforge.net/projects/conemu/files/latest/download">ConEmu</a>. If you&rsquo;re curious about what it does, more details <a href="https://conemu.github.io/">here</a>.</li>
+<li>Unzip it into a folder.</li>
+<li>If you&rsquo;re on an x64 machine, run <code>ConEmu64.exe</code>. If you&rsquo;re not sure or if you&rsquo;re on x86, run <code>ConEmu.exe</code></li>
+<li>If you&rsquo;re prompted by any UAC warnings, allow them.</li>
+<li>You&rsquo;ll be asked for some settings. Make the changes as shown with the arrows. The first change is to choose Git bash as the program that you want to run in tabbed mode. The second change is to assign a shortcut for running bash inside ConEmu.</li>
+<li>Profit!</li>
+</ol>
+<p>Here are the settings just in case:
+<img alt="conEmu settings" src="/images/conemu_1.png"/></p>
+<h3 id="usage">Usage:</h3>
+<ul>
+<li>Use the shortcut you assigned (default is <code>Ctrl + `</code>) to run your git bash</li>
+<li>Use <code>Win + W</code> to create a new tab</li>
+<li>Use <code>Ctrl + Tab</code> to move across tabs</li>
+<li>Use <code>Win + Alt + Del</code> to delete tab</li>
+</ul>
+<h3 id="bonus">Bonus:</h3>
+<ul>
+<li>Use <code>Ctrl + Shift + e</code> to split your terminal vertically (to the right)</li>
+<li>Use <code>Ctrl + Shift + o</code> to split your terminal horizontally (to the bottom)</li>
+<li>You can even use your mouse to move across these splits if you prefer that</li>
+</ul>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="http://twitter.com/binaryminery"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+    <li class="list-group-item"><a href="http://github.com/neuclid"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="http://localhost:8000/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-1">
+      <a href="http://localhost:8000/tag/code.html">code</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://localhost:8000/tag/gitbash.html">gitbash</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://localhost:8000/tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://localhost:8000/tag/thoughts.html">thoughts</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://localhost:8000/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://localhost:8000/tag/workflow.html">workflow</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 neuclid
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://localhost:8000/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://localhost:8000/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://localhost:8000/theme/js/respond.min.js"></script>
+
+
+
+
+</body>
+</html>

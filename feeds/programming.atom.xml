@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>higher abstractions - Programming</title><link href="http://localhost:8000/" rel="alternate"></link><link href="http://localhost:8000/feeds/programming.atom.xml" rel="self"></link><id>http://localhost:8000/</id><updated>2018-01-19T00:00:00+05:30</updated><entry><title>How to get multiple tabs on git bash [Windows]</title><link href="http://localhost:8000/how-to-get-multiple-tabs-on-git-bash-windows.html" rel="alternate"></link><published>2018-01-19T00:00:00+05:30</published><updated>2018-01-19T00:00:00+05:30</updated><author><name>neuclid</name></author><id>tag:localhost,2018-01-19:/how-to-get-multiple-tabs-on-git-bash-windows.html</id><summary type="html">&lt;p&gt;I&amp;rsquo;m on Windows (please no bully). So while &lt;code&gt;cmd.exe&lt;/code&gt; is terrible to get comfortable with, I&amp;rsquo;ve gotten along alright with git bash. However, whenever I use the Linux terminal, I find myself using &lt;strong&gt;tmux&lt;/strong&gt; and/or tabs in general. So naturally, I wanted to figure out similar …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I&amp;rsquo;m on Windows (please no bully). So while &lt;code&gt;cmd.exe&lt;/code&gt; is terrible to get comfortable with, I&amp;rsquo;ve gotten along alright with git bash. However, whenever I use the Linux terminal, I find myself using &lt;strong&gt;tmux&lt;/strong&gt; and/or tabs in general. So naturally, I wanted to figure out similar functionality on Windows.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s get to it.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Get &lt;a href="https://sourceforge.net/projects/conemu/files/latest/download"&gt;ConEmu&lt;/a&gt;. If you&amp;rsquo;re curious about what it does, more details &lt;a href="https://conemu.github.io/"&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Unzip it into a folder.&lt;/li&gt;
+&lt;li&gt;If you&amp;rsquo;re on an x64 machine, run &lt;code&gt;ConEmu64.exe&lt;/code&gt;. If you&amp;rsquo;re not sure or if you&amp;rsquo;re on x86, run &lt;code&gt;ConEmu.exe&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;If you&amp;rsquo;re prompted by any UAC warnings, allow them.&lt;/li&gt;
+&lt;li&gt;You&amp;rsquo;ll be asked for some settings. Make the changes as shown with the arrows. The first change is to choose Git bash as the program that you want to run in tabbed mode. The second change is to assign a shortcut for running bash inside ConEmu.&lt;/li&gt;
+&lt;li&gt;Profit!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here are the settings just in case:
+&lt;img alt="conEmu settings" src="/images/conemu_1.png"/&gt;&lt;/p&gt;
+&lt;h3 id="usage"&gt;Usage:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Use the shortcut you assigned (default is &lt;code&gt;Ctrl + `&lt;/code&gt;) to run your git bash&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;Win + W&lt;/code&gt; to create a new tab&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;Ctrl + Tab&lt;/code&gt; to move across tabs&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;Win + Alt + Del&lt;/code&gt; to delete tab&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="bonus"&gt;Bonus:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Use &lt;code&gt;Ctrl + Shift + e&lt;/code&gt; to split your terminal vertically (to the right)&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;Ctrl + Shift + o&lt;/code&gt; to split your terminal horizontally (to the bottom)&lt;/li&gt;
+&lt;li&gt;You can even use your mouse to move across these splits if you prefer that&lt;/li&gt;
+&lt;/ul&gt;</content><category term="gitbash"></category><category term="windows"></category><category term="workflow"></category></entry><entry><title>Use enumerate() in python instead of your boring for loops</title><link href="http://localhost:8000/use-enumerate-in-python-instead-of-your-boring-for-loops.html" rel="alternate"></link><published>2017-12-28T00:00:00+05:30</published><updated>2017-12-28T00:00:00+05:30</updated><author><name>neuclid</name></author><id>tag:localhost,2017-12-28:/use-enumerate-in-python-instead-of-your-boring-for-loops.html</id><summary type="html">&lt;p&gt;This is going to be a short one.
+For many tasks, we iterate using &lt;code&gt;for&lt;/code&gt; loops of this sort:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#Example: Getting odd numbers out of a list&lt;/span&gt;
+&lt;span class="n"&gt;some_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+
+&lt;span class="c1"&gt;#Boring&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;some_list&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
+    &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;some_list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;print …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;This is going to be a short one.
+For many tasks, we iterate using &lt;code&gt;for&lt;/code&gt; loops of this sort:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#Example: Getting odd numbers out of a list&lt;/span&gt;
+&lt;span class="n"&gt;some_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+
+&lt;span class="c1"&gt;#Boring&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;some_list&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
+    &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;some_list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Neat!&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;some_list&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Basically, &lt;code&gt;enumerate()&lt;/code&gt; returns an iterator with the tuple of &lt;code&gt;(index,item)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bonus tip&lt;/strong&gt;: if for some reason you don't like to count from zero, you can add an offset using &lt;code&gt;enumerate(list,offset)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;As an example, I haven't seen aisles numbered 0 anywhere, so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;grocery_store&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'apples'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'mangoes'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'oranges'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'guavas'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fruit&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;grocery_store&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;"We have {} at Aisle #{}"&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fruit&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To which you have the following sensible output:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;We have apples at Aisle #1
+We have mangoes at Aisle #2
+We have oranges at Aisle #3
+We have guavas at Aisle #4
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Start using it already!&lt;/p&gt;</content><category term="python"></category><category term="code"></category></entry></feed>
