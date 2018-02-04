@@ -13,11 +13,11 @@ from pelicanconf import *
 SITEURL = 'https://neuclid.github.io/blog'
 RELATIVE_URLS = False
 
-MENUITEMS = (('About', 'blog/pages/about.html'),
-             ('Now', 'blog/pages/now.html'),
-             ('Archives', 'blog/archives.html'),
-             ('Categories', 'blog/categories.html'),
-             ('Tags', 'blog/tags.html'),
+MENUITEMS = (('About', '/blog/pages/about.html'),
+             ('Now', '/blog/pages/now.html'),
+             ('Archives', '/blog/archives.html'),
+             ('Categories', '/blog/categories.html'),
+             ('Tags', '/blog/tags.html'),
 )
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
