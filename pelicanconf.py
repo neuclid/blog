@@ -9,7 +9,7 @@ AUTHOR = 'neuclid'
 SITETITLE = 'higher abstractions'
 #ABOUT_ME = "Wanderer"
 SITENAME = "higher abstractions"
-SITEURL = 'http://localhost:8000'
+SITEURL = ''
 
 PATH = 'content'
 
@@ -51,8 +51,8 @@ DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU=False
 DIRECT_TEMPLATES = (('search', 'index', 'categories', 'authors', 'archives',
 'tags'))
-MENUITEMS = (('About','/pages/about.html'),
-             ('Now','/pages/now.html'),
+MENUITEMS = (('About', '/pages/about.html'),
+             ('Now', '/pages/now.html'),
              ('Archives', '/archives.html'),
              ('Categories', '/categories.html'),
              ('Tags', '/tags.html'),
@@ -93,14 +93,14 @@ TOC = {
 
 # CUSTOM_CSS="static/css/custom.css"
 
-# the ipynb2pelican is the modified one by PeiJun: https://github.com/peijunz/ipynb2pelican#metacell
-
-# pyembed instructions here: https://pyembed.github.io/usage/rst/
-
 #ToDos
 
 # Add TravisCI like PeiJun
 # LINKS = (('<img alt="Build Status" src="https://travis-ci.org/peijunz/peijunz.github.io.svg?branch=src" style="max-width:100%;">', 'https://travis-ci.org/peijunz/peijunz.github.io'),
 #        ('<i class="fa fa-code fa-lg"></i> Source of Contents', 'https://github.com/peijunz/peijunz.github.io/tree/src/content'))
 
-# Inlcude pyembed
+# DONE - Add ipynb2pelican; the ipynb2pelican is the modified one by PeiJun: https://github.com/peijunz/ipynb2pelican#metacell
+# DONE - Include pyembed; pyembed instructions here: https://pyembed.github.io/usage/rst/
+# DONE - Add Jinja
+
+# Customize theme: https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3
